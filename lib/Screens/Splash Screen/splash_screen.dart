@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:quiz_app/Constants/images.dart';
 import 'package:quiz_app/wrapper.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splashIconSize: MediaQuery.of(context).size.width * 0.5,
-      splash: 'assets/images/Logo.png',
+      splash: logo,
       nextScreen: const Wrapper(),
     );
   }
