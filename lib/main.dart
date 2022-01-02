@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/Constants/colors.dart';
 
 
 import 'Screens/Splash Screen/splash_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor:const Color(0xffecf0f1), 
+        scaffoldBackgroundColor:scaffoldBackground,
       ),
       home: const SplashScreen(),
     );
