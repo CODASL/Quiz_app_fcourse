@@ -14,6 +14,7 @@ class Login extends StatelessWidget {
       children: [
         const LoginBackground(),
         logoBox(),
+        const RegisterRedirect(),
       ],
     ));
   }
@@ -52,3 +53,28 @@ Align logoBox() {
     ),
   );
 }
+
+class RegisterRedirect extends StatelessWidget {
+  const RegisterRedirect({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: SizedBox(
+        height: ScreenSize.height! * 0.1,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              "Don't you have an account ?",
+              style: TextStyle(),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
