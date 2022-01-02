@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:quiz_app/Constants/colors.dart';
 import 'package:quiz_app/Constants/images.dart';
 import 'package:quiz_app/Models/screensize.dart';
+import 'package:quiz_app/Widgets/common/custom_text.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -45,7 +47,7 @@ Align logoBox() {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SizedBox(
-            width: ScreenSize.width! * 0.3,
+            width: ScreenSize.width! * 0.27,
             child: Image.asset(logo),
           ),
         ],
@@ -65,10 +67,14 @@ class RegisterRedirect extends StatelessWidget {
         height: ScreenSize.height! * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              "Don't you have an account ?",
-              style: TextStyle(),
+          children: [
+            const CustomText(text: "Don't you have an account? "),
+            InkWell(
+              onTap: () {
+                debugPrint("Clicked");
+              },
+              child: const CustomText(
+                  text: "Register Now", fontWeight: FontWeight.bold),
             )
           ],
         ),
@@ -76,5 +82,3 @@ class RegisterRedirect extends StatelessWidget {
     );
   }
 }
-
-
