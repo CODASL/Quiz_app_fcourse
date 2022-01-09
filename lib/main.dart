@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/Constants/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/Providers/password_visibility.dart';
-import 'Screens/Splash Screen/splash_screen.dart';
+import 'package:quiz_app/Providers/providers.dart';
+import 'package:quiz_app/Routers/route_names.dart';
+import 'Routers/route.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -14,18 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<PasswordVisibility>(
-          create: (context) => PasswordVisibility(),
-        ),
-      ],
+      providers:providers,
       child: MaterialApp(
+        routes: routes,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           textTheme: GoogleFonts.latoTextTheme(),
           scaffoldBackgroundColor: scaffoldBackground,
         ),
-        home: const SplashScreen(),
+        initialRoute: splashScreen,
       ),
     );
   }

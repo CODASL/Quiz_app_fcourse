@@ -37,6 +37,9 @@ dependencies:
   animated_splash_screen: ^1.1.0
   google_fonts: ^2.2.0
   provider: ^6.0.2
+  scale_button: ^2.1.2
+  curved_navigation_bar: ^1.0.1
+  
 
 dev_dependencies:
   flutter_test:
