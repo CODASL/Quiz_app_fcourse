@@ -1,9 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Constants/colors.dart';
+import 'package:quiz_app/Models/appbar_model.dart';
 import 'package:quiz_app/Screens/HomeScreen/homescreen.dart';
 import 'package:quiz_app/Screens/MyQuizsScreen/my_quizs.dart';
 import 'package:quiz_app/Screens/ProfileScreen/profile.dart';
+import 'package:quiz_app/Widgets/common/Custom%20AppBar/custom_appbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,22 +18,36 @@ class _HomeState extends State<Home> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    List<Widget> items = const <Widget>[
-      Icon(Icons.home, size: 30, color: kWhite),
-      Icon(Icons.quiz, size: 30, color: kWhite),
-      Icon(Icons.person, size: 30, color: kWhite),
+  
+    List<AppBarModel> appbarModels = [
+      AppBarModel(icon: Icons.home, title: "Home"),
+      AppBarModel(icon: Icons.quiz, title: "Quiz"),
+      AppBarModel(icon: Icons.person, title: "Profile"),
     ];
+
     List<Widget> pages = const <Widget>[
       HomeScreen(),
       MyQuizs(),
       ProfileScreen(),
     ];
+
     return Scaffold(
+        appBar: customAppBar(
+          title: appbarModels[currentIndex].title,
+          leadingIcon: appbarModels[currentIndex].icon,
+        ),
         bottomNavigationBar: CurvedNavigationBar(
           index: currentIndex,
           color: primaryColor,
           backgroundColor: scaffoldBackground,
-          items: items,
+          items: List.generate(
+            3,
+            (index) => Icon(
+              appbarModels[index].icon,
+              size: 30,
+              color: kWhite,
+            ),
+          ),
           onTap: (index) {
             setState(() {
               currentIndex = index;
