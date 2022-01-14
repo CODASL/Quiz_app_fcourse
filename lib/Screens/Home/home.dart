@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
   
     List<AppBarModel> appbarModels = [
       AppBarModel(icon: Icons.home, title: "Home"),
-      AppBarModel(icon: Icons.quiz, title: "Quiz"),
+      AppBarModel(icon: Icons.quiz, title: "My Quizs"),
       AppBarModel(icon: Icons.person, title: "Profile"),
     ];
 
@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
     ];
 
     return Scaffold(
+      extendBody: true,
         appBar: customAppBar(
           title: appbarModels[currentIndex].title,
           leadingIcon: appbarModels[currentIndex].icon,
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: CurvedNavigationBar(
           index: currentIndex,
           color: primaryColor,
-          backgroundColor: scaffoldBackground,
+          backgroundColor: Colors.transparent,
           items: List.generate(
             3,
             (index) => Icon(
