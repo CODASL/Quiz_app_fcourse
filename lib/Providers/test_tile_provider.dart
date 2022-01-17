@@ -20,5 +20,11 @@ class TestTileProvider {
       author: "Mr Nimal",
       quizQty: "25",
     ),
+    TestTile(
+      testName: "1st Term",
+      subject: "English",
+      author: "Mr Saman",
+      quizQty: "35",
+    ),
   ];
 }

@@ -6,7 +6,6 @@ import 'package:quiz_app/Providers/providers.dart';
 import 'package:quiz_app/Routers/route_names.dart';
 import 'Routers/route.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers:providers,
+      providers: providers,
       child: MaterialApp(
         routes: routes,
         debugShowCheckedModeBanner: false,

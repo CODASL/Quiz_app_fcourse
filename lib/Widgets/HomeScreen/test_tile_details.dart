@@ -43,25 +43,37 @@ class TestTileDetails extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: ScreenSize.width! * 0.425,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomText(
-                      text: "$quizs Quizs",
-                      color: kWhite,
-                    ),
-                    CustomButton(
-                      text: "Start Quiz",
-                      ontap: () {},
-                    )
-                  ],
-                ),
+              TestTileRight(
+                quizs: quizs,
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TestTileRight extends StatelessWidget {
+  final String quizs;
+  const TestTileRight({Key? key, required this.quizs}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: ScreenSize.width! * 0.425,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          CustomText(
+            text: "$quizs Quizs",
+            color: kWhite,
+          ),
+          CustomButton(
+            text: "Start Quiz",
+            ontap: () {},
+          )
+        ],
       ),
     );
   }
