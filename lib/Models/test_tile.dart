@@ -6,11 +6,13 @@ class TestTile {
   String subject;
   String author;
   String quizQty;
+  bool isDone;
   TestTile({
     this.image = testimg,
     required this.testName,
     required this.subject,
     required this.author,
     required this.quizQty,
+    this.isDone = false,
   });
 }

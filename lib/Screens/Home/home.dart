@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
   
     List<AppBarModel> appbarModels = [
       AppBarModel(icon: Icons.home, title: "Home"),
-      AppBarModel(icon: Icons.quiz, title: "My Quizs"),
+      AppBarModel(icon: Icons.quiz, title: "My Tests"),
       AppBarModel(icon: Icons.person, title: "Profile"),
     ];
 

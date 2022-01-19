@@ -5,7 +5,6 @@ import 'package:quiz_app/Providers/test_tile_provider.dart';
 import 'package:quiz_app/Widgets/HomeScreen/test_tile_details.dart';
 import 'package:quiz_app/Widgets/HomeScreen/tile_image.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -15,34 +14,8 @@ class HomeScreen extends StatelessWidget {
       itemCount: TestTileProvider.testTileData.length,
       itemBuilder: (BuildContext context, int index) {
         var tileItem = TestTileProvider.testTileData[index];
-        return Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Material(
-            elevation: 5,
-            color: kWhite,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            ),
-            child: SizedBox(
-              child: Column(
-                children: [
-                  //red
-                  TileImage(
-                    img: tileItem.image,
-                  ),
-                  //green
-                  TestTileDetails(
-                    author: tileItem.author,
-                    quizs: tileItem.quizQty,
-                    subject: tileItem.subject,
-                    testName: tileItem.testName,
-                  )
-                ],
-              ),
-              height: 170,
-            ),
-          ),
+        return TestTileCard(
+          tileItem: tileItem,
         );
       },
     );
@@ -52,3 +25,43 @@ class HomeScreen extends StatelessWidget {
 
 
 
+
+
+
+
+
+
+class TestTileCard extends StatelessWidget {
+  final dynamic tileItem;
+  const TestTileCard({Key? key, this.tileItem}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+      child: Material(
+        elevation: 5,
+        color: kWhite,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+        child: SizedBox(
+          child: Column(
+            children: [
+              //red
+              TileImage(
+                img: tileItem.image,
+              ),
+              //green
+              TestTileDetails(
+               tileItem: tileItem,
+              )
+            ],
+          ),
+          height: 200,
+        ),
+      ),
+    );
+  }
+}

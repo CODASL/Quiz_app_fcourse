@@ -8,29 +8,33 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final double? minWidth;
   final String text;
+  final Color? bgColor;
   final void Function()? ontap;
-  const CustomButton(
-      {Key? key,
-      this.elevation,
-      this.radius,
-      this.height,
-      this.minWidth,
-      required this.text,
-      this.ontap})
-      : super(key: key);
+  final Color? txtColor;
+  const CustomButton({
+    Key? key,
+    this.elevation,
+    this.radius,
+    this.height,
+    this.minWidth,
+    required this.text,
+    this.ontap,
+    this.bgColor,
+    this.txtColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(radius ?? 0),
       elevation: elevation ?? 0,
-      color: primaryColor,
+      color: bgColor ?? primaryColor,
       child: MaterialButton(
           height: height,
           minWidth: minWidth,
           child: CustomText(
             text: text,
-            color: kWhite,
+            color: txtColor ?? kWhite,
           ),
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: ontap),

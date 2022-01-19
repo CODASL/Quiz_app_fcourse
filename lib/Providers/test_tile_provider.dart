@@ -7,6 +7,7 @@ class TestTileProvider {
       subject: "Physics",
       author: "Mr Saman",
       quizQty: "50",
+      isDone: true,
     ),
     TestTile(
       testName: "2nd Term",
@@ -21,10 +22,11 @@ class TestTileProvider {
       quizQty: "25",
     ),
     TestTile(
-      testName: "1st Term",
+      testName: "4th Term",
       subject: "English",
       author: "Mr Saman",
       quizQty: "35",
+      isDone: true,
     ),
   ];
 }

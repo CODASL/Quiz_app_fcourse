@@ -5,17 +5,11 @@ import 'package:quiz_app/Widgets/common/custom_button.dart';
 import 'package:quiz_app/Widgets/common/custom_text.dart';
 
 class TestTileDetails extends StatelessWidget {
-  final String testName;
-  final String subject;
-  final String author;
-  final String quizs;
-  const TestTileDetails(
-      {Key? key,
-      required this.testName,
-      required this.subject,
-      required this.author,
-      required this.quizs})
-      : super(key: key);
+  final dynamic tileItem;
+  const TestTileDetails({
+    Key? key,
+    this.tileItem,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,24 +21,26 @@ class TestTileDetails extends StatelessWidget {
           child: Row(
             children: [
               SizedBox(
-                width: ScreenSize.width! * 0.425,
+                width: ScreenSize.width! * 0.41,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CustomText(
-                        text: testName,
+                        text: tileItem.testName,
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
                         color: kWhite),
-                    CustomText(text: subject, fontSize: 10, color: kWhite),
+                    CustomText(
+                        text: tileItem.subject, fontSize: 10, color: kWhite),
                     const SizedBox(height: 10),
-                    CustomText(text: author, fontSize: 10, color: kWhite)
+                    CustomText(
+                        text: tileItem.author, fontSize: 10, color: kWhite)
                   ],
                 ),
               ),
               TestTileRight(
-                quizs: quizs,
+                tileItem: tileItem,
               ),
             ],
           ),
@@ -55,22 +51,32 @@ class TestTileDetails extends StatelessWidget {
 }
 
 class TestTileRight extends StatelessWidget {
-  final String quizs;
-  const TestTileRight({Key? key, required this.quizs}) : super(key: key);
+  final dynamic tileItem;
+  const TestTileRight({Key? key, this.tileItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: ScreenSize.width! * 0.425,
+      width: ScreenSize.width! * 0.41,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomText(
-            text: "$quizs Quizs",
+            text: "${tileItem.quizQty} Quizs",
             color: kWhite,
           ),
+          Visibility(
+            visible: tileItem.isDone,
+            child: const CustomText(
+              text: "Mark : 40%",
+              color: kWhite,
+            ),
+          ),
           CustomButton(
-            text: "Start Quiz",
+            radius: 10,
+            txtColor: tileItem.isDone ? primaryColor : kWhite,
+            bgColor: tileItem.isDone ? kWhite : primaryColor,
+            text: tileItem.isDone ? "Redo Quiz" : "Start Quiz",
             ontap: () {},
           )
         ],
