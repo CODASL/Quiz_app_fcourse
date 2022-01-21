@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Constants/colors.dart';
 import 'package:quiz_app/Models/screensize.dart';
 import 'package:quiz_app/Widgets/common/custom_text.dart';
-
 
 class ScoreListTile extends StatelessWidget {
   final String testName;
@@ -15,11 +15,12 @@ class ScoreListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: ScreenSize.width!*0.1, vertical:7),
+      padding: EdgeInsets.symmetric(
+          horizontal: ScreenSize.width! * 0.1, vertical: 7),
       child: ListTile(
           title: CustomText(
             text: testName,
-            fontSize: 12,
+            fontSize: 14,
           ),
           tileColor: kWhite,
           shape:
@@ -28,7 +29,11 @@ class ScoreListTile extends StatelessWidget {
             radius: 20,
             backgroundImage: AssetImage(img),
           ),
-          trailing: CustomText(text: mark)),
+          trailing: CustomText(
+            text: '$mark%',
+            fontSize: 17,
+            fontWeight: FontWeight.bold,
+          )),
     );
   }
 }

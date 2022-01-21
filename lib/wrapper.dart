@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Models/screensize.dart';
-
 import 'Screens/Login/login.dart';
 
 class Wrapper extends StatelessWidget {

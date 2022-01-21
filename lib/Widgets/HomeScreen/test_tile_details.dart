@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Constants/colors.dart';
 import 'package:quiz_app/Models/screensize.dart';
+import 'package:quiz_app/Routers/route_names.dart';
+import 'package:quiz_app/Screens/Quiz%20Page/quiz_page.dart';
 import 'package:quiz_app/Widgets/common/custom_button.dart';
 import 'package:quiz_app/Widgets/common/custom_text.dart';
 
@@ -77,7 +79,11 @@ class TestTileRight extends StatelessWidget {
             txtColor: tileItem.isDone ? primaryColor : kWhite,
             bgColor: tileItem.isDone ? kWhite : primaryColor,
             text: tileItem.isDone ? "Redo Quiz" : "Start Quiz",
-            ontap: () {},
+            ontap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return QuizPage(tileItem: tileItem);
+              }));
+            },
           )
         ],
       ),

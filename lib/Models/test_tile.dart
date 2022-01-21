@@ -1,4 +1,5 @@
 import 'package:quiz_app/Constants/images.dart';
+import 'package:quiz_app/Models/quiz.dart';
 
 class TestTile {
   String image;
@@ -7,6 +8,9 @@ class TestTile {
   String author;
   String quizQty;
   bool isDone;
+  double mark;
+  List<Quiz> quizList;
+
   TestTile({
     this.image = testimg,
     required this.testName,
@@ -14,5 +18,7 @@ class TestTile {
     required this.author,
     required this.quizQty,
     this.isDone = false,
+    this.mark = 0,
+    required this.quizList,
   });
 }

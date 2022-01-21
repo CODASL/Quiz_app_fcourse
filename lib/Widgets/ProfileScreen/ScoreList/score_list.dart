@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/Providers/score_tile_provider.dart';
+import 'package:quiz_app/Database/database.dart';
+
 import 'package:quiz_app/Widgets/ProfileScreen/ScoreList/score_list_tile.dart';
 
 class ScoreList extends StatelessWidget {
@@ -10,12 +11,12 @@ class ScoreList extends StatelessWidget {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: ScoreTileProvider.scoreTileData.length,
+      itemCount: Database.scoreList.length,
       itemBuilder: (BuildContext context, int index) {
-        var tileItem = ScoreTileProvider.scoreTileData[index];
+        var tileItem = Database.scoreList[index];
         return ScoreListTile(
           img: tileItem.leadingImg,
-          mark: tileItem.marks,
+          mark: tileItem.mark.toString(),
           testName: tileItem.title,
         );
       },

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Constants/colors.dart';
-import 'package:quiz_app/Providers/test_tile_provider.dart';
+import 'package:quiz_app/Database/database.dart';
+
 import 'package:quiz_app/Widgets/HomeScreen/test_tile_details.dart';
 import 'package:quiz_app/Widgets/HomeScreen/tile_image.dart';
 
@@ -11,9 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: TestTileProvider.testTileData.length,
+      itemCount: Database.testTileData.length,
       itemBuilder: (BuildContext context, int index) {
-        var tileItem = TestTileProvider.testTileData[index];
+        var tileItem = Database.testTileData[index];
         return TestTileCard(
           tileItem: tileItem,
         );
