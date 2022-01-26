@@ -16,7 +16,7 @@ class Database {
       quizList: [
         Quiz(
           quiz: "Is Flutter Free",
-          answer: ["Yes", "No"],
+          answer: ["Yes", "No", "Both", "none"],
           correctAnswer: "Yes",
         ),
         Quiz(
@@ -31,14 +31,36 @@ class Database {
       subject: "Biology",
       author: "Mr Kuruppu",
       quizQty: "40",
-      quizList: [],
+      quizList: [
+        Quiz(
+          quiz: "Is Flutter Free",
+          answer: ["Yes", "No", "Both", "none"],
+          correctAnswer: "Yes",
+        ),
+        Quiz(
+          quiz: "Is Flutter Cross Platform",
+          answer: ["Yes", "No"],
+          correctAnswer: "Yes",
+        ),
+      ],
     ),
     TestTile(
       testName: "3rd Term",
       subject: "Sinhala",
       author: "Mr Nimal",
       quizQty: "25",
-      quizList: [],
+      quizList: [
+        Quiz(
+          quiz: "Is Flutter Free",
+          answer: ["Yes", "No", "Both", "none"],
+          correctAnswer: "Yes",
+        ),
+        Quiz(
+          quiz: "Is Flutter Cross Platform",
+          answer: ["Yes", "No"],
+          correctAnswer: "Yes",
+        ),
+      ],
     ),
     TestTile(
       testName: "4th Term",
@@ -47,7 +69,18 @@ class Database {
       quizQty: "35",
       isDone: true,
       mark: 45,
-      quizList: [],
+      quizList: [
+        Quiz(
+          quiz: "Is Flutter Free",
+          answer: ["Yes", "No", "Both", "none"],
+          correctAnswer: "Yes",
+        ),
+        Quiz(
+          quiz: "Is Flutter Cross Platform",
+          answer: ["Yes", "No"],
+          correctAnswer: "Yes",
+        ),
+      ],
     ),
     TestTile(
       testName: "5th Term",
@@ -56,7 +89,18 @@ class Database {
       quizQty: "15",
       isDone: true,
       mark: 65,
-      quizList: [],
+      quizList: [
+        Quiz(
+          quiz: "Is Flutter Free",
+          answer: ["Yes", "No", "Both", "none"],
+          correctAnswer: "Yes",
+        ),
+        Quiz(
+          quiz: "Is Flutter Cross Platform",
+          answer: ["Yes", "No"],
+          correctAnswer: "Yes",
+        ),
+      ],
     ),
   ];
 
