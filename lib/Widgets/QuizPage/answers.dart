@@ -26,7 +26,8 @@ class Answers extends StatelessWidget {
                 value: index,
                 groupValue: rad.answerIndex,
                 onChanged: (val) {
-                  rad.onChange(val);
+                  rad.onChange(val, context);
+                  rad.marking();
                 },
                 title: CustomText(
                   text: answers[index],

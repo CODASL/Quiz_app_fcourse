@@ -10,6 +10,7 @@ class FinishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double mark = 50;
+    
     return SizedBox(
       height: ScreenSize.height,
       width: ScreenSize.width,
@@ -35,11 +36,14 @@ class FinishPage extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-           CustomButton(text: "Redo",ontap: (){},),
+          CustomButton(
+            text: "Redo",
+            ontap: () {},
+          ),
           const SizedBox(
             height: 10,
           ),
-           CustomButton(text: "Go to Profile",ontap: (){}),
+          CustomButton(text: "Go to Profile", ontap: () {}),
         ],
       ),
     );

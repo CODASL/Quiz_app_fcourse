@@ -8,7 +8,7 @@ class TestTile {
   String author;
   String quizQty;
   bool isDone;
-  double mark;
+  int mark;
   List<Quiz> quizList;
 
   TestTile({
