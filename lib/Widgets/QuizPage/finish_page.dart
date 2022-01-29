@@ -9,8 +9,8 @@ class FinishPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double mark = 50;
-    
+    int mark = 50;
+
     return SizedBox(
       height: ScreenSize.height,
       width: ScreenSize.width,
@@ -18,32 +18,22 @@ class FinishPage extends StatelessWidget {
         children: [
           Image.asset(winnerImg),
           const SizedBox(
+            height: 50,
+          ),
+          const CustomText(text: "Congratulation !",fontSize: 20,),
+          const CustomText(text: "You did it well",fontSize: 17,),
+          const SizedBox(
+            height: 15,
+          ),
+          CustomText(text: "Your Mark is $mark" , fontSize: 20,),
+          const SizedBox(
             height: 20,
           ),
-          const CustomText(
-            text: "Congratulation ! \n You did it well",
-            textAlign: TextAlign.center,
-            fontSize: 27,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          CustomText(
-            text: "Your Mark is $mark%",
-            textAlign: TextAlign.center,
-            fontSize: 24,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          CustomButton(
-            text: "Redo",
-            ontap: () {},
-          ),
+          const CustomButton(text: "Redo"),
           const SizedBox(
             height: 10,
           ),
-          CustomButton(text: "Go to Profile", ontap: () {}),
+          const CustomButton(text: "Return to Home"),
         ],
       ),
     );
