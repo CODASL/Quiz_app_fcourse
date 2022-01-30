@@ -39,6 +39,7 @@ dependencies:
   provider: ^6.0.2
   scale_button: ^2.1.2
   curved_navigation_bar: ^1.0.1
+  device_preview: ^1.0.0
   
 
 dev_dependencies:
