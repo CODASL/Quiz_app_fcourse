@@ -5,7 +5,8 @@ import 'package:quiz_app/Widgets/common/custom_text.dart';
 
 class Question extends StatelessWidget {
   final String quiz;
-  const Question({Key? key, required this.quiz}) : super(key: key);
+  final String quizNo;
+  const Question({Key? key, required this.quiz, required this.quizNo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Question extends StatelessWidget {
       color: kWhite,
       width: ScreenSize.width,
       child: CustomText(
-        text: quiz,
+        text: quizNo + ".  " + quiz,
         fontSize: 22,
       ),
     );

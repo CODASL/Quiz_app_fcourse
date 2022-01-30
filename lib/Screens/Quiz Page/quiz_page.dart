@@ -47,6 +47,7 @@ class QuizPage extends StatelessWidget {
                     ),
                     Question(
                       quiz: tileItem.quizList[quizData.quizIndex].quiz,
+                      quizNo: (quizData.quizIndex+1).toString(),
                     ),
                     const SizedBox(
                       height: 20,
