@@ -8,11 +8,15 @@ class CustomTextField extends StatelessWidget {
   final IconData prefixIcon;
   final String hintText;
   final bool? isPassword;
+  final TextEditingController? controller;
+  final void Function(String)? onChanged;
   const CustomTextField({
     Key? key,
     required this.prefixIcon,
     required this.hintText,
     this.isPassword,
+    this.controller,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -20,6 +24,8 @@ class CustomTextField extends StatelessWidget {
     final _passwordVisibility =
         Provider.of<PasswordVisibility>(context, listen: true);
     return TextFormField(
+        onChanged: onChanged,
+        controller: controller,
         obscureText: _passwordVisibility.changeObsecure(isPassword: isPassword),
         decoration: InputDecoration(
           hintText: hintText,
