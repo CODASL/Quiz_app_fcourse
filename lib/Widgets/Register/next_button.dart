@@ -20,7 +20,7 @@ class NextPageButton extends StatelessWidget {
                   onPressed: () {
                     
                     Provider.of<RegisterWidgets>(context, listen: false)
-                        .onChange(context);
+                        .onClick(context);
                   }),
             ),
           )),
