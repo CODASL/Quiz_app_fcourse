@@ -44,9 +44,7 @@ class RegisterWidgets extends ChangeNotifier {
           fullName: user.fullName.toString());
 
       if (result != null) {
-        Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return const Home();
-        }));
+        Navigator.pushNamed(context, home);
       } else {
         debugPrint("Register Error");
         isLoading = false;
