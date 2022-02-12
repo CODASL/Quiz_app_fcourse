@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Routers/route_names.dart';
 
@@ -13,7 +14,9 @@ class IconBar extends StatelessWidget {
       leading: Icon(leadingIcon),
       actions: [
         IconButton(
-          onPressed: () {
+          onPressed: () async {
+            FirebaseAuth auth = FirebaseAuth.instance;
+            await auth.signOut();
             Navigator.popAndPushNamed(context, login);
           },
           icon: const Icon(Icons.logout),
@@ -22,3 +25,6 @@ class IconBar extends StatelessWidget {
     );
   }
 }
+
+
+
